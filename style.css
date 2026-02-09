@@ -1,47 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 40px;
-  background: #fafafa;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  background: #f5f7fa;
+  color: #1f2933;
 }
 
-.auth-container {
-  max-width: 400px;
-  margin: auto;
-}
-
-input, textarea, select, button {
-  display: block;
-  width: 100%;
-  margin: 8px 0;
-  padding: 8px;
-}
-
-header {
+/* ---------- AUTH ---------- */
+.auth-bg {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-nav {
+.auth-card {
+  background: #ffffff;
+  padding: 40px;
+  width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.auth-section h2 {
+  margin-bottom: 10px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #10b981;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.divider {
   margin: 20px 0;
+  color: #9ca3af;
 }
 
-nav button {
-  margin-right: 10px;
+.message {
+  margin-top: 15px;
+  color: #dc2626;
 }
 
-.tab {
-  border: 1px solid #ddd;
-  padding: 15px;
-  background: #fff;
+/* ---------- DASHBOARD ---------- */
+.sidebar {
+  width: 220px;
+  background: #111827;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  padding: 20px;
 }
 
-.hidden {
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar button {
+  margin-bottom: 10px;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.sidebar button:hover {
+  background: #1f2937;
+}
+
+.logout {
+  margin-top: 30px;
+  color: #f87171;
+}
+
+.main {
+  margin-left: 240px;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.tab.hidden {
   display: none;
 }
 
-pre {
-  background: #f4f4f4;
-  padding: 10px;
-  overflow: auto;
+.muted {
+  color: #6b7280;
+  margin-top: 10px;
 }
