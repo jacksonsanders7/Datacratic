@@ -2,33 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Datacratic</title>
+  <title>Datacratic Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="auth-bg">
-  <div class="auth-card">
+<body onload="initApp()">
+
+  <aside class="sidebar">
     <h1>Datacratic</h1>
-    <p class="subtitle">Collective data governance platform</p>
+    <p class="tagline">Collective Data Governance</p>
 
-    <div class="auth-section">
-      <h2>Sign In</h2>
-      <input id="loginEmail" type="email" placeholder="Email" />
-      <input id="loginPassword" type="password" placeholder="Password" />
-      <button onclick="login()">Sign In</button>
-    </div>
+    <nav>
+      <button onclick="showTab('account')">Account</button>
+      <button onclick="showTab('upload')">Upload Data</button>
+      <button onclick="showTab('status')">Data Status</button>
+      <button onclick="showTab('payout')">Payout</button>
+    </nav>
+  </aside>
 
-    <div class="divider">OR</div>
+  <main class="main">
+    <!-- ACCOUNT -->
+    <section id="account" class="tab">
+      <h2>Account Overview</h2>
+      <div class="card">
+        <p><strong>Name:</strong> Demo User</p>
+        <p><strong>Email:</strong> demo@datacratic.org</p>
+        <p class="muted">
+          This is a single-user demo running entirely in the browser.
+        </p>
+      </div>
+    </section>
 
-    <div class="auth-section">
-      <h2>Create Account</h2>
-      <input id="signupName" placeholder="Full Name" />
-      <input id="signupEmail" type="email" placeholder="Email" />
-      <input id="signupPassword" type="password" placeholder="Password" />
-      <button class="secondary" onclick="signup()">Sign Up</button>
-    </div>
+    <!-- UPLOAD -->
+    <section id="upload" class="tab hidden">
+      <h2>Upload Personal Data</h2>
+      <div class="card">
+        <label>Data Category</label>
+        <select id="dataType">
+          <option>Screen Time</option>
+          <option>Fast Food Purchases</option>
+          <option>Location Patterns</option>
+        </select>
 
-    <p id="authMessage" class="message"></p>
-  </div>
+        <label>Description</label>
+        <textarea id="dataContent" placeholder="Brief description of the data"></textarea>
+
+        <button onclick="uploadData()">Upload Data</button>
+      </div>
+    </section>
+
+    <!-- STATUS -->
+    <section id="status" class="tab hidden">
+      <h2>Data Status</h2>
+      <div id="dataStatus" class="card"></div>
+    </section>
+
+    <!-- PAYOUT -->
+    <section id="payout" class="tab hidden">
+      <h2>Payout Settings</h2>
+      <div class="card">
+        <label>Preferred Method</label>
+        <select>
+          <option>PayPal</option>
+          <option>Venmo</option>
+          <option>Direct Bank Transfer</option>
+        </select>
+        <p class="muted">
+          No payouts available yet. This section represents future revenue distribution.
+        </p>
+      </div>
+    </section>
+  </main>
 
   <script src="app.js"></script>
 </body>
