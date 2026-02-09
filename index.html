@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DataCommons – Collective Data Cooperative (Demo)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>DataCommons</h1>
+  <p>Collective personal data cooperative (concept demo)</p>
+
+  <section>
+    <h2>Create User</h2>
+    <input id="userEmail" placeholder="email" />
+    <button onclick="createUser()">Create</button>
+    <pre id="users"></pre>
+  </section>
+
+  <section>
+    <h2>Submit Dataset</h2>
+    <input id="datasetUser" placeholder="user id" />
+    <input id="datasetType" placeholder="data type" />
+    <button onclick="submitDataset()">Submit</button>
+    <pre id="datasets"></pre>
+  </section>
+
+  <section>
+    <h2>Give Consent</h2>
+    <input id="consentUser" placeholder="user id" />
+    <input id="consentDataset" placeholder="dataset id" />
+    <button onclick="giveConsent()">Consent</button>
+    <pre id="consents"></pre>
+  </section>
+
+  <section>
+    <h2>Check Collective Approval</h2>
+    <input id="checkDataset" placeholder="dataset id" />
+    <button onclick="checkApproval()">Check</button>
+    <pre id="approval"></pre>
+  </section>
+
+  <section>
+    <h2>Vote on Proposal</h2>
+    <input id="voteUser" placeholder="user id" />
+    <input id="proposalId" placeholder="proposal id" />
+    <select id="voteSupport">
+      <option value="true">Support</option>
+      <option value="false">Oppose</option>
+    </select>
+    <button onclick="vote()">Vote</button>
+    <pre id="votes"></pre>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
