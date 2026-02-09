@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Datacratic – Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="loadDashboard()">
+  <header>
+    <h1>Datacratic Dashboard</h1>
+    <button onclick="logout()">Log Out</button>
+  </header>
+
+  <nav>
+    <button onclick="showTab('account')">Account Info</button>
+    <button onclick="showTab('upload')">Data Upload</button>
+    <button onclick="showTab('status')">Data Status</button>
+    <button onclick="showTab('payout')">Payout</button>
+  </nav>
+
+  <!-- ACCOUNT INFO -->
+  <section id="account" class="tab">
+    <h2>Account Info</h2>
+    <pre id="accountInfo"></pre>
+  </section>
+
+  <!-- DATA UPLOAD -->
+  <section id="upload" class="tab hidden">
+    <h2>Upload Data</h2>
+    <select id="dataType">
+      <option value="Screen Time">Screen Time</option>
+      <option value="Fast Food Purchases">Fast Food Purchases</option>
+    </select>
+    <textarea id="dataContent" placeholder="Paste or describe your data here"></textarea>
+    <button onclick="uploadData()">Upload</button>
+  </section>
+
+  <!-- DATA STATUS -->
+  <section id="status" class="tab hidden">
+    <h2>Data Status</h2>
+    <pre id="dataStatus"></pre>
+  </section>
+
+  <!-- PAYOUT -->
+  <section id="payout" class="tab hidden">
+    <h2>Payout (Demo)</h2>
+    <p>Select a payout method:</p>
+    <select>
+      <option>PayPal</option>
+      <option>Venmo</option>
+      <option>Direct Bank Transfer</option>
+    </select>
+    <p><em>No payouts available yet.</em></p>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
