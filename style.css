@@ -20,7 +20,7 @@ body {
   background: white;
   padding: 40px;
   border-radius: 16px;
-  width: 300px;
+  width: 320px;
   text-align: center;
 }
 
@@ -43,6 +43,12 @@ body {
 
 .auth-card .secondary {
   background: #2b193d;
+}
+
+.error {
+  color: red;
+  min-height: 20px;
+  margin-top: 10px;
 }
 
 /* DASHBOARD */
