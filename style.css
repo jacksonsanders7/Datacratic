@@ -1,50 +1,85 @@
-body {
-  margin: 0;
-  font-family: system-ui;
-}
-
-.hidden { display: none; }
-
-/* AUTH */
-
-.auth-container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg,#2b193d,#4c2a85);
-}
-
-.auth-card {
-  background: white;
-  padding: 40px;
-  border-radius: 16px;
-  width: 300px;
-  text-align: center;
-}
-
-.auth-card input {
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-}
-
-.auth-card button {
-  width: 100%;
-  margin: 8px 0;
-  padding: 12px;
-  background: #7c5cff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.secondary {
-  background: #2b193d;
-}
-
-.error {
-  color: red;
-  min-height: 20px;
-}
+diff --git a/style.css b/style.css
+index 17f1082bb956a7ad4d7db016047d28f9ef8d1d00..72a305912ed2bd9447423d5abcc227e69973267c 100644
+--- a/style.css
++++ b/style.css
+@@ -1,50 +1,73 @@
++* {
++  box-sizing: border-box;
++}
++
+ body {
+   margin: 0;
+   font-family: system-ui;
+ }
+ 
+ .hidden { display: none; }
+ 
+ /* AUTH */
+ 
+ .auth-container {
+-  height: 100vh;
++  min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(135deg,#2b193d,#4c2a85);
++  padding: 20px;
+ }
+ 
+ .auth-card {
+   background: white;
+-  padding: 40px;
++  padding: 32px;
+   border-radius: 16px;
+-  width: 300px;
++  width: min(380px, 100%);
+   text-align: center;
+ }
+ 
++.auth-mode-toggle {
++  display: grid;
++  grid-template-columns: 1fr 1fr;
++  gap: 8px;
++  margin-bottom: 12px;
++}
++
++.mode-btn {
++  padding: 10px;
++  border-radius: 8px;
++  border: 1px solid #ddd;
++  background: #f5f5f5;
++  cursor: pointer;
++}
++
++.mode-btn.active {
++  background: #2b193d;
++  color: #fff;
++  border-color: #2b193d;
++}
++
+ .auth-card input {
+   width: 100%;
+   margin: 10px 0;
+   padding: 10px;
+ }
+ 
+ .auth-card button {
+   width: 100%;
+   margin: 8px 0;
+   padding: 12px;
+   background: #7c5cff;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+ }
+ 
+-.secondary {
+-  background: #2b193d;
+-}
+-
+ .error {
+   color: red;
+   min-height: 20px;
++  margin: 8px 0 0;
+ }
